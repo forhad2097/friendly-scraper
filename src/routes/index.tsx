@@ -1,24 +1,84 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero, TrustBar } from "@/components/site/Hero";
+import {
+  About,
+  CareerPathway,
+  CaregivingSection,
+  Courses,
+  JapaneseSection,
+  NursingSection,
+  WhyChooseUs,
+} from "@/components/site/Sections";
+import { Gallery } from "@/components/site/Gallery";
+import { Admission, Contact, FinalCta } from "@/components/site/Admission";
+import { Footer } from "@/components/site/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE =
+  "Nightingale Nursing & Midwifery Institute | Nursing, Caregiving & Japanese Language Training";
+const DESC =
+  "Nightingale Nursing & Midwifery Institute provides nursing, midwifery, caregiving and Japanese language training with Bangladesh and Japan career pathway support.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          name: "Nightingale Nursing & Midwifery Institute",
+          description: DESC,
+          telephone: "+8801727127356",
+          email: "nightingalennmi2020@gmail.com",
+          url: "https://www.nightingalennmi.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Adabor, Mohammadpur",
+            addressLocality: "Dhaka",
+            addressCountry: "BD",
+          },
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <h1 className="sr-only">
+          Nightingale Nursing &amp; Midwifery Institute — Nursing, Midwifery,
+          Caregiving ও Japanese Language Training
+        </h1>
+        <Hero />
+        <TrustBar />
+        <About />
+        <Courses />
+        <JapaneseSection />
+        <CaregivingSection />
+        <NursingSection />
+        <CareerPathway />
+        <WhyChooseUs />
+        <Gallery />
+        <Admission />
+        <Contact />
+        <FinalCta />
+      </main>
+      <Footer />
     </div>
   );
 }
