@@ -60,10 +60,6 @@ function Index() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        <h1 className="sr-only">
-          Nightingale Nursing &amp; Midwifery Institute — Nursing, Midwifery,
-          Caregiving ও Japanese Language Training
-        </h1>
         <Hero />
         <TrustBar />
         <About />

@@ -75,7 +75,7 @@ export function Gallery() {
           aria-modal="true"
           aria-label="Gallery image"
           onClick={() => setActive(null)}
-          className="fixed inset-0 z-[60] flex animate-fade-in items-center justify-center bg-foreground/85 p-4"
+          className="fixed inset-0 z-[60] flex items-center animate-in fade-in duration-200 justify-center bg-foreground/85 p-4"
         >
           <button
             type="button"
@@ -89,7 +89,7 @@ export function Gallery() {
             src={current.src}
             alt={current.alt}
             onClick={(e) => e.stopPropagation()}
-            className="max-h-[85vh] w-auto max-w-full animate-scale-in rounded-xl object-contain"
+            className="max-h-[85vh] w-auto max-w-full animate-in zoom-in-95 duration-200 rounded-xl object-contain"
           />
         </div>
       ) : null}
