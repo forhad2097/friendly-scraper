@@ -148,7 +148,7 @@ export function Contact() {
         title="যোগাযোগ করুন"
         subtitle="Visit our campus or reach us over phone, email and WhatsApp."
       />
-      <div className="mt-12 grid gap-8 lg:grid-cols-2 [&>*]:min-w-0">
+      <div className="mt-12 grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-2 [&>*]:min-w-0">
         <Reveal className="rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
           <div className="flex min-w-0 items-center gap-3">
             <img
