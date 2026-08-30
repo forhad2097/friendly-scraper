@@ -1,18 +1,59 @@
 import {
   ArrowRight,
+  BookOpen,
   BriefcaseBusiness,
+  Building2,
+  FlaskConical,
   GraduationCap,
+  Globe2,
   Home,
   Languages,
+  Library,
+  ShieldCheck,
   Stethoscope,
-  HeartHandshake,
+  Trophy,
+  Users,
 } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
-import { COURSES } from "@/lib/site-data";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  CAREER_INTERNATIONAL,
+  CAREER_LOCAL,
+  CAREER_SUPPORT,
+  CLINICAL_TRAINING,
+  COURSES,
+  FACILITIES,
+  FACULTY_ROLES,
+  HIGHER_STUDY_OPTIONS,
+  MANAGEMENT_TEAM,
+} from "@/lib/site-data";
 import classroom from "@/assets/classroom.jpg.asset.json";
 import caregivingTraining from "@/assets/caregiving-training.jpg";
-import japaneseClass from "@/assets/japanese-class.jpg";
-import groupPhoto from "@/assets/image.png.asset.json";
+
+const FACILITY_ICONS: Record<
+  string,
+  React.ComponentType<{ className?: string; "aria-hidden"?: boolean }>
+> = {
+  BookOpen,
+  FlaskConical,
+  Library,
+  Languages,
+  Trophy,
+  Home,
+};
 
 export function About() {
   return (
@@ -23,24 +64,28 @@ export function About() {
             About Us
           </span>
           <h2 className="mt-4 text-3xl leading-tight font-bold sm:text-4xl">
-            প্রশিক্ষণ থেকে ক্যারিয়ার—
+            "Enter to Learn,
             <br />
-            <span className="text-forest">একটি পূর্ণ পথচলা</span>
+            <span className="text-forest">Leave to Serve"</span>
           </h2>
           <p className="mt-5 leading-relaxed text-muted-foreground">
-            আমাদের লক্ষ্য হলো শিক্ষার্থীদের নার্সিং, মিডওয়াইফারি, কেয়ারগিভিং
-            এবং জাপানি ভাষায় বাস্তবমুখী দক্ষতা তৈরি করা। কোর্স শেষে যোগ্যতা ও
-            ভাষাগত প্রস্তুতির ভিত্তিতে বাংলাদেশ ও জাপানে চাকরির সুযোগের জন্য
-            গাইড করা হয়।
+            ফ্লোরেন্স নাইটিঙ্গেল—আধুনিক নার্সিংয়ের পথিকৃৎ—এর নামে প্রতিষ্ঠিত নাইটিঙ্গেল নার্সিং
+            অ্যান্ড মিডওয়াইফারি ইনস্টিটিউট (NNMI) বাংলাদেশ ও আন্তর্জাতিক অঙ্গনে সফল ক্যারিয়ারের
+            জন্য প্রস্তুত করে এমন মানসম্পন্ন নার্সিং ও মিডওয়াইফারি শিক্ষা প্রদান করে।
+          </p>
+          <p className="mt-3 leading-relaxed text-muted-foreground">
+            আমাদের লক্ষ্য নার্সিং ও মিডওয়াইফারি শিক্ষায় একটি Center of Excellence হয়ে
+            ওঠা—বাংলাদেশের স্বাস্থ্যসেবার মান উন্নয়ন এবং শিক্ষার্থীদের বৈশ্বিক পর্যায়ে সক্ষম করে
+            তোলা।
           </p>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
-              "প্র্যাকটিক্যাল প্রশিক্ষণ",
-              "পেশাদার শিক্ষার পরিবেশ",
-              "কেয়ারগিভিং স্কিল",
-              "জাপানি ভাষা প্রস্তুতি",
-              "ক্যারিয়ার প্রস্তুতি",
-              "Japan pathway গাইডেন্স",
+              "BNMC অনুমোদিত ডিপ্লোমা প্রোগ্রাম",
+              "হাসপাতাল-ভিত্তিক ক্লিনিক্যাল ট্রেনিং",
+              "স্বাস্থ্য মন্ত্রণালয় কর্তৃক অনুমোদিত",
+              "দক্ষিণ কোরিয়ার বিশেষজ্ঞদের প্রশিক্ষণ",
+              "মহিলা শিক্ষার্থীদের জন্য হোস্টেল",
+              "ক্যারিয়ার গাইডেন্স সহায়তা",
             ].map((item) => (
               <li
                 key={item}
@@ -63,9 +108,9 @@ export function About() {
           />
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
             {[
-              { big: "৬ মাস", small: "নির্দিষ্ট প্রশিক্ষণ প্রোগ্রাম" },
-              { big: "N5 / N4", small: "Japanese Language" },
-              { big: "Level 2 / 3", small: "Caregiving" },
+              { big: "৩ বছর", small: "ডিপ্লোমা প্রোগ্রাম" },
+              { big: "BNMC", small: "Approved" },
+              { big: "IACIB", small: "Associate" },
             ].map((s) => (
               <div
                 key={s.big}
@@ -89,15 +134,15 @@ export function Courses() {
         <SectionHeading
           eyebrow="Courses"
           title="আপনার জন্য সঠিক কোর্স"
-          subtitle="Courses designed for practical skills, professional growth and career preparation."
+          subtitle="BNMC অনুমোদিত ডিপ্লোমা প্রোগ্রাম—হাসপাতাল-ভিত্তিক প্র্যাকটিক্যাল ট্রেনিংসহ।"
         />
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-12 grid gap-6 lg:grid-cols-2">
           {COURSES.map((course, i) => (
             <Reveal
               as="li"
               key={course.title}
-              delay={(i % 3) * 90}
-              className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+              delay={i * 90}
+              className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-7"
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent text-2xl">
@@ -108,26 +153,61 @@ export function Courses() {
                 </span>
               </div>
               <h3 className="mt-4 text-lg font-bold">{course.title}</h3>
-              <p className="text-sm font-medium text-forest">
-                {course.titleBn}
-              </p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {course.desc}
-              </p>
+              <p className="text-sm font-medium text-forest">{course.titleBn}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{course.desc}</p>
               <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
-                <span className="rounded-full bg-muted px-3 py-1">
-                  {course.level}
-                </span>
+                <span className="rounded-full bg-muted px-3 py-1">মেয়াদ: {course.duration}</span>
                 <span className="rounded-full bg-leaf/50 px-3 py-1 text-leaf-foreground">
-                  Practical Training
+                  আসন: {course.seats}
                 </span>
               </div>
+
+              <Accordion type="single" collapsible className="mt-5">
+                <AccordionItem value="curriculum">
+                  <AccordionTrigger className="text-sm font-semibold text-forest">
+                    বছরভিত্তিক কারিকুলাম দেখুন
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="grid gap-4">
+                      {course.years.map((y) => (
+                        <div key={y.label}>
+                          <p className="text-xs font-bold tracking-wide text-primary uppercase">
+                            {y.label}
+                          </p>
+                          <ul className="mt-1.5 grid gap-1 text-sm text-muted-foreground">
+                            {y.topics.map((t) => (
+                              <li key={t} className="flex items-start gap-2">
+                                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-forest" />
+                                {t}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                      <div>
+                        <p className="text-xs font-bold tracking-wide text-primary uppercase">
+                          ক্লিনিক্যাল ট্রেনিং সাইট
+                        </p>
+                        <ul className="mt-1.5 grid gap-1 text-sm text-muted-foreground">
+                          {course.clinicalSites.map((s) => (
+                            <li key={s} className="flex items-start gap-2">
+                              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-forest" />
+                              {s}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
               <div className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-4">
                 <a
-                  href="#contact"
+                  href="#admission"
                   className="inline-flex items-center gap-1 text-sm font-semibold text-forest hover:underline"
                 >
-                  বিস্তারিত দেখুন
+                  ভর্তি ও ফি জানুন
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </a>
                 <a
@@ -145,214 +225,213 @@ export function Courses() {
   );
 }
 
-export function JapaneseSection() {
+export function Facilities() {
   return (
-    <section id="japan" className="relative overflow-hidden bg-background py-16 sm:py-20">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-24 -left-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
+    <section id="facilities" className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
+      <SectionHeading
+        eyebrow="Facilities"
+        title="আমাদের সুযোগ-সুবিধা"
+        subtitle="শিক্ষার্থীদের বাস্তবভিত্তিক শেখার জন্য প্রয়োজনীয় সব সুবিধা এক ক্যাম্পাসে।"
       />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
-        <Reveal className="order-2 lg:order-1">
-          <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-primary uppercase">
-            Japanese Language Training
-          </span>
-          <h2 className="mt-4 text-3xl leading-tight font-bold sm:text-4xl">
-            জাপানি ভাষা শিখুন,
-            <br />
-            জাপান ক্যারিয়ারের জন্য প্রস্তুত হোন 🇯🇵
-          </h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                level: "Japanese N5",
-                desc: "মৌলিক শব্দভাণ্ডার, হিরাগানা-কাতাকানা ও দৈনন্দিন কথাবার্তা।",
-              },
-              {
-                level: "Japanese N4",
-                desc: "কর্মক্ষেত্রের যোগাযোগ, শ্রবণ দক্ষতা ও ইন্টারভিউ প্রস্তুতি।",
-              },
-            ].map((n) => (
-              <div
-                key={n.level}
-                className="rounded-2xl border border-border bg-card p-5 shadow-soft"
-              >
-                <p className="text-base font-bold text-primary">{n.level}</p>
-                <p className="mt-2 text-sm text-muted-foreground">{n.desc}</p>
-              </div>
-            ))}
-          </div>
-          <ul className="mt-6 grid gap-2 text-sm sm:grid-cols-2">
-            {[
-              "Basic Japanese communication",
-              "Workplace communication",
-              "Japan-focused preparation",
-              "Caregiver pathway support",
-              "Interview preparation",
-              "Career guidance",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 rounded-xl bg-muted px-4 py-3 text-xs leading-relaxed text-muted-foreground">
-            যোগ্যতা ও সংশ্লিষ্ট শর্ত পূরণ সাপেক্ষে Japan employment pathway-এর
-            জন্য সহায়তা করা হয়।
-          </p>
-        </Reveal>
+      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {FACILITIES.map((f, i) => {
+          const Icon = FACILITY_ICONS[f.icon] ?? BookOpen;
+          return (
+            <Reveal
+              as="li"
+              key={f.title}
+              delay={(i % 3) * 90}
+              className="rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+            >
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-accent-foreground">
+                <Icon className="h-6 w-6" aria-hidden />
+              </span>
+              <h3 className="mt-4 text-base font-bold">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+            </Reveal>
+          );
+        })}
+      </ul>
 
-        <Reveal delay={100} className="order-1 lg:order-2">
-          <img
-            src={japaneseClass}
-            alt="জাপানি ভাষা শিক্ষা ক্লাসে শিক্ষার্থীরা হিরাগানা শিখছেন"
-            loading="lazy"
-            width={1408}
-            height={1008}
-            className="h-[300px] w-full rounded-[2rem] object-cover shadow-lift sm:h-[420px]"
-          />
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-export function CaregivingSection() {
-  return (
-    <section className="bg-leaf/25 py-16 sm:py-20">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
+      <div className="mt-12 grid items-center gap-10 rounded-3xl border border-border bg-muted/40 p-6 lg:grid-cols-2 lg:p-10">
         <Reveal>
           <img
             src={caregivingTraining}
-            alt="ইনস্টিটিউটের ইউনিফর্ম পরা কেয়ারগিভিং শিক্ষার্থীরা প্রবীণ পরিচর্যার হাতে-কলমে প্রশিক্ষণ নিচ্ছেন"
+            alt="শিক্ষার্থীরা রোগীর সেবা ও বেডসাইড কেয়ারের হাতে-কলমে প্রশিক্ষণ নিচ্ছেন"
             loading="lazy"
             width={1408}
             height={1008}
-            className="h-[300px] w-full rounded-[2rem] object-cover shadow-lift sm:h-[420px]"
+            className="h-[260px] w-full rounded-2xl object-cover shadow-soft sm:h-[320px]"
           />
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="text-3xl leading-tight font-bold sm:text-4xl">
-            হাতে-কলমে কেয়ারগিভিং প্রশিক্ষণ
-          </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            প্রশিক্ষকের সরাসরি তত্ত্বাবধানে বাস্তব পরিবেশে কেয়ারগিভিং দক্ষতা
-            অর্জনের সুযোগ।
-          </p>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {[
-              "প্রবীণ পরিচর্যা (Elderly care)",
-              "রোগীকে সহায়তা (Patient assistance)",
-              "বেডসাইড কেয়ার",
-              "চলাচলে সহায়তা (Mobility)",
-              "পরিচ্ছন্নতা ও হাইজিন সাপোর্ট",
-              "পেশাদার যোগাযোগ",
-            ].map((item) => (
-              <li
-                key={item}
-                className="rounded-xl bg-background px-4 py-3 text-sm font-medium shadow-soft"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <a
-            href="#courses"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.03]"
-          >
-            Caregiving Course দেখুন <ArrowRight className="h-4 w-4" aria-hidden />
-          </a>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-export function NursingSection() {
-  return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
-        <Reveal>
-          <h2 className="text-3xl leading-tight font-bold sm:text-4xl">
-            প্র্যাকটিক্যাল নার্সিং প্রশিক্ষণ
-          </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            শুধু বই নয়—বাস্তবভিত্তিক skill development-এর ওপর গুরুত্ব।
-          </p>
-          <ul className="mt-6 space-y-3">
-            {[
-              "Patient care ও বেডসাইড প্র্যাকটিস",
-              "Basic clinical procedures",
-              "নার্সিং প্র্যাকটিস ও ডকুমেন্টেশন",
-              "মেডিকেল ইকুইপমেন্ট পরিচিতি",
-              "ক্লাসরুম ও ডেমো ট্রেনিং",
-              "টিম লার্নিং ও পেশাদার আচরণ",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 text-sm leading-relaxed"
-              >
-                <Stethoscope
-                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
-                  aria-hidden
-                />
-                {item}
+          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-primary uppercase">
+            <Stethoscope className="h-3.5 w-3.5" aria-hidden />
+            Clinical Training
+          </span>
+          <h3 className="mt-4 text-2xl font-bold">{CLINICAL_TRAINING.title}</h3>
+          <p className="mt-3 leading-relaxed text-muted-foreground">{CLINICAL_TRAINING.desc}</p>
+          <ul className="mt-4 grid gap-2">
+            {CLINICAL_TRAINING.sites.map((s) => (
+              <li key={s} className="flex items-start gap-2 text-sm font-medium">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                {s}
               </li>
             ))}
           </ul>
         </Reveal>
-        <Reveal delay={100}>
-          <img
-            src={groupPhoto.url}
-            alt="নার্সিং শিক্ষার্থীরা ইনস্টিটিউটের একটি প্রোগ্রামে দলগতভাবে অংশ নিচ্ছেন"
-            loading="lazy"
-            width={960}
-            height={1280}
-            className="h-[340px] w-full rounded-[2rem] object-cover object-top shadow-lift sm:h-[460px]"
-          />
-        </Reveal>
       </div>
+
+      <p className="mt-8 text-center text-sm text-muted-foreground">
+        আমাদের Faculty ও Management টিম সম্পর্কে জানুন{" "}
+        <a href="#faculty" className="font-semibold text-forest hover:underline">
+          নিচে দেখুন ↓
+        </a>
+      </p>
     </section>
   );
 }
 
-export function CareerPathway() {
-  const steps = [
-    { no: "01", en: "Course", bn: "কোর্সে ভর্তি" },
-    { no: "02", en: "Skill", bn: "Practical Training" },
-    { no: "03", en: "Language", bn: "Japanese N5/N4" },
-    { no: "04", en: "Assessment", bn: "যোগ্যতা যাচাই" },
-    { no: "05", en: "Job Support", bn: "Bangladesh / Japan" },
-  ];
+export function FacultyManagement() {
   return (
-    <section className="bg-forest py-16 text-forest-foreground sm:py-20">
+    <section id="faculty" className="bg-muted/50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeading
-          eyebrow="Career Pathway 🇯🇵"
-          tone="dark"
-          title="শিখুন → প্রস্তুত হোন → ক্যারিয়ার শুরু করুন"
+          eyebrow="Faculty & Management"
+          title="আমাদের শিক্ষক ও পরিচালনা পর্ষদ"
+          subtitle="অভিজ্ঞ চিকিৎসক, নার্সিং প্রশিক্ষক এবং দক্ষিণ কোরিয়ার বিশেষজ্ঞদের অতিথি সেশনের সমন্বয়ে গঠিত একাডেমিক টিম।"
         />
-        <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {steps.map((s, i) => (
-            <Reveal
-              as="li"
-              key={s.no}
-              delay={i * 80}
-              className="rounded-2xl border border-forest-foreground/15 bg-forest-foreground/5 p-5"
-            >
-              <span className="text-xs font-bold tracking-widest opacity-60">
-                {s.no}
-              </span>
-              <p className="mt-2 text-base font-bold">{s.en}</p>
-              <p className="mt-1 text-sm opacity-80">{s.bn}</p>
-            </Reveal>
-          ))}
-        </ol>
-        <p className="mx-auto mt-10 max-w-3xl rounded-xl bg-forest-foreground/10 px-5 py-4 text-center text-xs leading-relaxed opacity-90">
-          চাকরি/ভিসা/জাপান যাত্রা নির্ভর করে শিক্ষার্থীর যোগ্যতা, ভাষা, পরীক্ষা,
-          নিয়োগকর্তা ও সংশ্লিষ্ট সরকারি নিয়মের ওপর।
-        </p>
+
+        <div className="mt-12 grid gap-10 lg:grid-cols-5">
+          <Reveal className="overflow-hidden rounded-2xl border border-border bg-card shadow-soft lg:col-span-3">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>পদবি</TableHead>
+                  <TableHead>যোগ্যতা</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {FACULTY_ROLES.map((f) => (
+                  <TableRow key={f.role}>
+                    <TableCell className="font-medium">{f.role}</TableCell>
+                    <TableCell className="text-muted-foreground">{f.qualification}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Reveal>
+
+          <Reveal delay={100} className="lg:col-span-2">
+            <h3 className="flex items-center gap-2 text-base font-bold">
+              <Users className="h-5 w-5 text-primary" aria-hidden />
+              Management Team
+            </h3>
+            <ul className="mt-4 grid gap-3">
+              {MANAGEMENT_TEAM.map((m) => (
+                <li
+                  key={m.name}
+                  className="rounded-xl border border-border bg-card px-4 py-3 shadow-soft"
+                >
+                  <p className="text-sm font-bold">{m.name}</p>
+                  <p className="text-xs text-muted-foreground">{m.role}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 rounded-xl bg-background px-4 py-3 text-xs leading-relaxed text-muted-foreground shadow-soft">
+              ইনস্টিটিউট নিয়মিতভাবে অভিজ্ঞ চিকিৎসক, সিনিয়র স্বাস্থ্যসেবা পেশাজীবী এবং দক্ষিণ
+              কোরিয়ার বিশেষজ্ঞ চিকিৎসকদের অতিথি সেশনের জন্য আমন্ত্রণ জানায়।
+            </p>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function CareerOpportunities() {
+  return (
+    <section id="career" className="bg-forest py-16 text-forest-foreground sm:py-20">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading
+          eyebrow="Career Opportunities"
+          tone="dark"
+          title="দেশে ও বিদেশে ক্যারিয়ারের সুযোগ"
+          subtitle="নার্সিং ও মিডওয়াইফারি ডিপ্লোমা সম্পন্নকারীদের জন্য বাংলাদেশ ও আন্তর্জাতিক পর্যায়ে বিস্তৃত কর্মক্ষেত্র।"
+        />
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <Reveal className="rounded-2xl border border-forest-foreground/15 bg-forest-foreground/5 p-6">
+            <h3 className="flex items-center gap-2 text-base font-bold">
+              <Building2 className="h-5 w-5" aria-hidden />
+              দেশীয় কর্মক্ষেত্র
+            </h3>
+            <ul className="mt-4 grid gap-2.5 text-sm">
+              {CAREER_LOCAL.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-foreground/60" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal
+            delay={100}
+            className="rounded-2xl border border-forest-foreground/15 bg-forest-foreground/5 p-6"
+          >
+            <h3 className="flex items-center gap-2 text-base font-bold">
+              <Globe2 className="h-5 w-5" aria-hidden />
+              আন্তর্জাতিক সুযোগ
+            </h3>
+            <ul className="mt-4 grid gap-3 text-sm">
+              {CAREER_INTERNATIONAL.map((c) => (
+                <li key={c.region}>
+                  <p className="font-semibold">{c.region}</p>
+                  <p className="mt-0.5 opacity-80">{c.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+          <Reveal className="rounded-2xl border border-forest-foreground/15 bg-forest-foreground/5 p-6">
+            <h3 className="flex items-center gap-2 text-base font-bold">
+              <BriefcaseBusiness className="h-5 w-5" aria-hidden />
+              ক্যারিয়ার সহায়তা
+            </h3>
+            <ul className="mt-4 grid gap-2.5 text-sm sm:grid-cols-2">
+              {CAREER_SUPPORT.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-foreground/60" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal
+            delay={100}
+            className="rounded-2xl border border-forest-foreground/15 bg-forest-foreground/5 p-6"
+          >
+            <h3 className="flex items-center gap-2 text-base font-bold">
+              <GraduationCap className="h-5 w-5" aria-hidden />
+              ডিপ্লোমা শেষে উচ্চশিক্ষার সুযোগ
+            </h3>
+            <ul className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              {HIGHER_STUDY_OPTIONS.map((item) => (
+                <li key={item} className="rounded-full bg-forest-foreground/10 px-3 py-1.5">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-xs leading-relaxed opacity-75">
+              উপরের উচ্চশিক্ষা প্রোগ্রামগুলো NNMI কর্তৃক পরিচালিত নয়—এগুলো ডিপ্লোমা সম্পন্নের পর
+              শিক্ষার্থীরা অন্যান্য প্রতিষ্ঠানে অনুসরণ করতে পারেন এমন সম্ভাব্য পথ।
+            </p>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -361,70 +440,66 @@ export function CareerPathway() {
 export function WhyChooseUs() {
   const features = [
     {
-      Icon: GraduationCap,
-      title: "Professional Training",
-      bn: "পেশাদার প্রশিক্ষণ",
-      desc: "অভিজ্ঞ প্রশিক্ষকদের তত্ত্বাবধানে গঠনমূলক ও শৃঙ্খলাবদ্ধ শিক্ষা।",
-    },
-    {
-      Icon: Languages,
-      title: "Japanese Language",
-      bn: "জাপানি ভাষা শিক্ষা",
-      desc: "N5 থেকে N4 পর্যন্ত ধাপে ধাপে ভাষা প্রস্তুতির ব্যবস্থা।",
-    },
-    {
-      Icon: HeartHandshake,
-      title: "Practical Caregiving",
-      bn: "প্র্যাকটিক্যাল কেয়ারগিভিং",
-      desc: "বাস্তব পরিবেশে হাতে-কলমে কেয়ারগিভিং দক্ষতা অর্জন।",
+      Icon: ShieldCheck,
+      title: "BNMC Approved Curriculum",
+      bn: "সরকার অনুমোদিত কারিকুলাম",
+      desc: "Bangladesh Nursing & Midwifery Council এবং স্বাস্থ্য মন্ত্রণালয়ের অনুমোদনপ্রাপ্ত প্রোগ্রাম।",
     },
     {
       Icon: Stethoscope,
-      title: "Japan-focused Preparation",
-      bn: "জাপান-কেন্দ্রিক প্রস্তুতি",
-      desc: "জাপানের কর্মপরিবেশ ও যোগাযোগ-রীতি অনুযায়ী প্রস্তুতি।",
+      title: "Hospital Clinical Training",
+      bn: "হাসপাতাল-ভিত্তিক প্র্যাকটিস",
+      desc: "Dhaka Medical College Hospital-সহ স্বীকৃত হাসপাতালে নিয়মিত ক্লিনিক্যাল ট্রেনিং।",
+    },
+    {
+      Icon: GraduationCap,
+      title: "South Korea Partnership",
+      bn: "দক্ষিণ কোরিয়ার বিশেষজ্ঞ প্রশিক্ষণ",
+      desc: "দক্ষিণ কোরিয়ার চিকিৎসক ও স্বাস্থ্যসেবা বিশেষজ্ঞদের বিশেষায়িত প্রশিক্ষণ সেশন।",
     },
     {
       Icon: Home,
       title: "Hostel Support",
       bn: "হোস্টেল সুবিধা",
-      desc: "নির্দিষ্ট ব্যাচ ও আসন সাপেক্ষে থাকা-খাওয়ার সহায়তা।",
+      desc: "মহিলা সুপারিনটেনডেন্টের তত্ত্বাবধানে নিরাপদ থাকা-খাওয়ার ব্যবস্থা।",
+    },
+    {
+      Icon: Languages,
+      title: "English Language Club",
+      bn: "ইংলিশ ল্যাঙ্গুয়েজ ক্লাব",
+      desc: "স্পোকেন ইংলিশ ও পাবলিক স্পিকিং চর্চার মাধ্যমে পেশাদার যোগাযোগ দক্ষতা।",
     },
     {
       Icon: BriefcaseBusiness,
       title: "Career Guidance",
       bn: "ক্যারিয়ার গাইডেন্স",
-      desc: "সিভি, ইন্টারভিউ ও ক্যারিয়ার পরিকল্পনায় দিকনির্দেশনা।",
+      desc: "সিভি, ইন্টারভিউ প্রস্তুতি এবং দেশে-বিদেশে চাকরির সুযোগে দিকনির্দেশনা।",
     },
   ];
   return (
-    <section id="services" className="bg-muted/50 py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading
-          eyebrow="Services"
-          title="কেন আমাদের প্রতিষ্ঠান বেছে নেবেন?"
-          subtitle="Training, language, skills and career guidance — one place."
-        />
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ Icon, title, bn, desc }, i) => (
-            <Reveal
-              as="li"
-              key={title}
-              delay={(i % 3) * 90}
-              className="rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
-            >
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-accent-foreground">
-                <Icon className="h-6 w-6" aria-hidden />
-              </span>
-              <h3 className="mt-4 text-base font-bold">{title}</h3>
-              <p className="text-sm font-medium text-forest">{bn}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {desc}
-              </p>
-            </Reveal>
-          ))}
-        </ul>
-      </div>
+    <section id="services" className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
+      <SectionHeading
+        eyebrow="Why NNMI"
+        title="কেন আমাদের প্রতিষ্ঠান বেছে নেবেন?"
+        subtitle="স্বীকৃত কারিকুলাম, হাতে-কলমে ক্লিনিক্যাল ট্রেনিং এবং ক্যারিয়ার সহায়তা—এক জায়গায়।"
+      />
+      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map(({ Icon, title, bn, desc }, i) => (
+          <Reveal
+            as="li"
+            key={title}
+            delay={(i % 3) * 90}
+            className="rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+          >
+            <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-accent-foreground">
+              <Icon className="h-6 w-6" aria-hidden />
+            </span>
+            <h3 className="mt-4 text-base font-bold">{title}</h3>
+            <p className="text-sm font-medium text-forest">{bn}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+          </Reveal>
+        ))}
+      </ul>
     </section>
   );
 }

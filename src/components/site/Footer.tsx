@@ -1,3 +1,4 @@
+import { Facebook } from "lucide-react";
 import { INSTITUTE, NAV_LINKS } from "@/lib/site-data";
 import logo from "@/assets/logo.png.asset.json";
 
@@ -21,27 +22,20 @@ export function Footer() {
             </div>
           </div>
           <ul className="mt-5 flex flex-wrap gap-2 text-xs font-semibold">
-            {["Nursing", "Midwifery", "Caregiving", "Japanese Language"].map(
-              (t) => (
-                <li
-                  key={t}
-                  className="rounded-full bg-forest-foreground/10 px-3 py-1"
-                >
-                  {t}
-                </li>
-              ),
-            )}
+            {["Nursing", "Midwifery", "BNMC Approved", "Hostel Facility"].map((t) => (
+              <li key={t} className="rounded-full bg-forest-foreground/10 px-3 py-1">
+                {t}
+              </li>
+            ))}
           </ul>
           <p className="mt-5 max-w-md text-sm leading-relaxed opacity-80">
-            নার্সিং, মিডওয়াইফারি, কেয়ারগিভিং ও জাপানি ভাষার প্রশিক্ষণের মাধ্যমে
-            দেশ-বিদেশে ক্যারিয়ার প্রস্তুতিতে সহায়তা।
+            নার্সিং ও মিডওয়াইফারি শিক্ষায় BNMC অনুমোদিত ডিপ্লোমা প্রোগ্রাম, হাসপাতাল-ভিত্তিক
+            ক্লিনিক্যাল ট্রেনিং এবং ক্যারিয়ার প্রস্তুতিতে সহায়তা।
           </p>
         </div>
 
         <div>
-          <h2 className="text-sm font-bold tracking-widest uppercase opacity-70">
-            Quick Links
-          </h2>
+          <h2 className="text-sm font-bold tracking-widest uppercase opacity-70">Quick Links</h2>
           <ul className="mt-4 grid gap-2 text-sm">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
@@ -54,9 +48,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-bold tracking-widest uppercase opacity-70">
-            Contact
-          </h2>
+          <h2 className="text-sm font-bold tracking-widest uppercase opacity-70">Contact</h2>
           <ul className="mt-4 grid gap-2 text-sm">
             <li>
               <a href={`tel:${INSTITUTE.phoneTel}`} className="hover:underline">
@@ -64,15 +56,23 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href={`mailto:${INSTITUTE.email}`}
-                className="break-all hover:underline"
-              >
+              <a href={`mailto:${INSTITUTE.email}`} className="break-all hover:underline">
                 {INSTITUTE.email}
               </a>
             </li>
             <li className="opacity-85">{INSTITUTE.website}</li>
             <li className="opacity-85">{INSTITUTE.addressEn}</li>
+            <li className="opacity-85">{INSTITUTE.officeHoursEn}</li>
+            <li>
+              <a
+                href={INSTITUTE.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 opacity-85 hover:underline"
+              >
+                <Facebook className="h-4 w-4" aria-hidden /> Facebook
+              </a>
+            </li>
           </ul>
         </div>
       </div>

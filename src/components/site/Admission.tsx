@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin, Globe, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Facebook, Mail, MapPin, Globe, Phone, MessageCircle } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
-import { COURSE_OPTIONS, INSTITUTE } from "@/lib/site-data";
+import { ADMISSION_INFO, COURSE_OPTIONS, INSTITUTE } from "@/lib/site-data";
 import logo from "@/assets/logo.png.asset.json";
 
 const field =
@@ -14,13 +14,13 @@ export function Admission() {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const text = [
-      "ভর্তি আবেদন — Nightingale Nursing & Midwifery Institute",
+      "ভর্তি আবেদন — Nightingale Nursing and Midwifery Institute (NNMI)",
       `নাম: ${data.get("name")}`,
       `মোবাইল: ${data.get("mobile")}`,
       `ইমেইল: ${data.get("email") || "-"}`,
       `কোর্স: ${data.get("course")}`,
       `শিক্ষাগত যোগ্যতা: ${data.get("qualification") || "-"}`,
-      `Japan pathway: ${data.get("japan")}`,
+      `হোস্টেল প্রয়োজন: ${data.get("hostel")}`,
       `বার্তা: ${data.get("message") || "-"}`,
     ].join("\n");
 
@@ -43,10 +43,36 @@ export function Admission() {
           <h2 className="mt-4 text-3xl leading-tight font-bold sm:text-4xl">
             আপনার ক্যারিয়ার শুরু হোক আজ থেকেই
           </h2>
-          <p className="mt-4 leading-relaxed opacity-90">
-            আপনি কোন কোর্সে আগ্রহী, আপনার শিক্ষাগত যোগ্যতা এবং Japan pathway-তে
-            আগ্রহ আছে কি না—এই তথ্য দিয়ে আবেদন পাঠান।
-          </p>
+          <p className="mt-4 leading-relaxed opacity-90">{ADMISSION_INFO.eligibility}</p>
+
+          <div className="mt-6 grid gap-4 rounded-2xl bg-primary-foreground/10 p-5 text-sm sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase opacity-70">
+                Admission Fee
+              </p>
+              <p className="mt-1 text-lg font-bold">{ADMISSION_INFO.admissionFee}</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase opacity-70">Hostel Fee</p>
+              <p className="mt-1 text-lg font-bold">{ADMISSION_INFO.hostelFee}</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs leading-relaxed opacity-80">{ADMISSION_INFO.paymentNote}</p>
+
+          <div className="mt-6">
+            <p className="text-xs font-bold tracking-widest uppercase opacity-70">
+              প্রয়োজনীয় কাগজপত্র
+            </p>
+            <ul className="mt-3 grid gap-2 text-sm">
+              {ADMISSION_INFO.documents.map((doc) => (
+                <li key={doc} className="flex items-start gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-foreground/60" />
+                  {doc}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div className="mt-8 grid gap-3 text-sm">
             <a
               href={`tel:${INSTITUTE.phoneTel}`}
@@ -108,15 +134,20 @@ export function Admission() {
               </label>
             </div>
             <label className="grid gap-1.5 text-sm font-medium">
-              Japan pathway-তে আগ্রহ?
-              <select name="japan" defaultValue="Yes" className={field}>
+              হোস্টেল প্রয়োজন?
+              <select name="hostel" defaultValue="Yes" className={field}>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
             </label>
             <label className="grid gap-1.5 text-sm font-medium">
               বার্তা / Message
-              <textarea name="message" rows={3} className={field} placeholder="আপনার প্রশ্ন লিখুন" />
+              <textarea
+                name="message"
+                rows={3}
+                className={field}
+                placeholder="আপনার প্রশ্ন লিখুন"
+              />
             </label>
             <button
               type="submit"
@@ -129,8 +160,8 @@ export function Admission() {
                 role="status"
                 className="rounded-xl bg-accent px-4 py-3 text-sm font-medium text-accent-foreground"
               >
-                ধন্যবাদ! আপনার তথ্য প্রস্তুত হয়েছে—WhatsApp-এ পাঠিয়ে দিন অথবা{" "}
-                {INSTITUTE.phone} নম্বরে কল করুন।
+                ধন্যবাদ! আপনার তথ্য প্রস্তুত হয়েছে—WhatsApp-এ পাঠিয়ে দিন অথবা {INSTITUTE.phone}{" "}
+                নম্বরে কল করুন।
               </p>
             ) : null}
           </form>
@@ -146,7 +177,7 @@ export function Contact() {
       <SectionHeading
         eyebrow="Contact"
         title="যোগাযোগ করুন"
-        subtitle="Visit our campus or reach us over phone, email and WhatsApp."
+        subtitle="Visit our campus or reach us over phone, email, WhatsApp and Facebook."
       />
       <div className="mt-12 grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-2 [&>*]:min-w-0">
         <Reveal className="rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
@@ -161,24 +192,24 @@ export function Contact() {
             />
             <div className="min-w-0">
               <h3 className="text-base font-bold sm:text-lg">{INSTITUTE.name}</h3>
-              <p className="truncate text-sm text-muted-foreground">
-                {INSTITUTE.nameBn}
-              </p>
+              <p className="truncate text-sm text-muted-foreground">{INSTITUTE.nameBn}</p>
             </div>
           </div>
           <ul className="mt-6 grid gap-4 text-sm">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              <a href={`tel:${INSTITUTE.phoneTel}`} className="hover:underline">
-                {INSTITUTE.phone}
-              </a>
+              <span className="flex flex-col gap-0.5">
+                <a href={`tel:${INSTITUTE.phoneTel}`} className="hover:underline">
+                  {INSTITUTE.phone}
+                </a>
+                <a href={`tel:${INSTITUTE.phoneSecondaryTel}`} className="hover:underline">
+                  {INSTITUTE.phoneSecondary}
+                </a>
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              <a
-                href={`mailto:${INSTITUTE.email}`}
-                className="break-all hover:underline"
-              >
+              <a href={`mailto:${INSTITUTE.email}`} className="break-all hover:underline">
                 {INSTITUTE.email}
               </a>
             </li>
@@ -190,9 +221,13 @@ export function Contact() {
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
               <span>
                 {INSTITUTE.address}
-                <span className="block text-muted-foreground">
-                  {INSTITUTE.addressEn}
-                </span>
+                <span className="block text-muted-foreground">{INSTITUTE.addressEn}</span>
+              </span>
+            </li>
+            <li className="flex items-start gap-3 text-muted-foreground">
+              <span className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+              <span>
+                {INSTITUTE.officeHours} ({INSTITUTE.officeHoursEn})
               </span>
             </li>
           </ul>
@@ -217,10 +252,21 @@ export function Contact() {
             >
               <MessageCircle className="h-4 w-4" aria-hidden /> WhatsApp
             </a>
+            <a
+              href={INSTITUTE.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold hover:bg-muted"
+            >
+              <Facebook className="h-4 w-4" aria-hidden /> Facebook
+            </a>
           </div>
         </Reveal>
 
-        <Reveal delay={100} className="overflow-hidden rounded-3xl border border-border shadow-soft">
+        <Reveal
+          delay={100}
+          className="overflow-hidden rounded-3xl border border-border shadow-soft"
+        >
           <iframe
             title="Institute location map — Adabor, Mohammadpur, Dhaka"
             src="https://www.google.com/maps?q=Adabor,%20Mohammadpur,%20Dhaka&output=embed"
@@ -242,7 +288,7 @@ export function FinalCta() {
           আপনার স্বপ্নের ক্যারিয়ার শুরু হোক এখান থেকেই
         </h2>
         <p className="mt-3 text-sm font-medium text-forest sm:text-base">
-          Nursing • Caregiving • Japanese Language • Japan Career Pathway
+          {INSTITUTE.tagline} — Diploma in Nursing Science & Midwifery • Diploma in Midwifery
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <a

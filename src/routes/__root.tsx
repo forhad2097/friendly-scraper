@@ -77,16 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nightingale Nursing & Midwifery Institute" },
+      { title: "Nightingale Nursing and Midwifery Institute (NNMI)" },
       {
         name: "description",
         content:
-          "নার্সিং, মিডওয়াইফারি, কেয়ারগিভিং ও জাপানি ভাষার প্রশিক্ষণ প্রতিষ্ঠান — ঢাকা, বাংলাদেশ।",
+          "BNMC অনুমোদিত নার্সিং ও মিডওয়াইফারি ডিপ্লোমা প্রশিক্ষণ প্রতিষ্ঠান — ঢাকা, বাংলাদেশ।",
       },
       { property: "og:type", content: "website" },
       {
         property: "og:site_name",
-        content: "Nightingale Nursing & Midwifery Institute",
+        content: "Nightingale Nursing and Midwifery Institute (NNMI)",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],

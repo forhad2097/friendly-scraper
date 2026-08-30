@@ -3,21 +3,21 @@ import { Navbar } from "@/components/site/Navbar";
 import { Hero, TrustBar } from "@/components/site/Hero";
 import {
   About,
-  CareerPathway,
-  CaregivingSection,
+  CareerOpportunities,
   Courses,
-  JapaneseSection,
-  NursingSection,
+  Facilities,
+  FacultyManagement,
   WhyChooseUs,
 } from "@/components/site/Sections";
 import { Gallery } from "@/components/site/Gallery";
 import { Admission, Contact, FinalCta } from "@/components/site/Admission";
 import { Footer } from "@/components/site/Footer";
+import { INSTITUTE } from "@/lib/site-data";
 
 const TITLE =
-  "Nightingale Nursing & Midwifery Institute | Nursing, Caregiving & Japanese Language Training";
+  "Nightingale Nursing and Midwifery Institute (NNMI) | BNMC Approved Diploma in Nursing & Midwifery, Dhaka";
 const DESC =
-  "Nightingale Nursing & Midwifery Institute provides nursing, midwifery, caregiving and Japanese language training with Bangladesh and Japan career pathway support.";
+  "NNMI Dhaka offers BNMC-approved Diploma in Nursing Science & Midwifery and Diploma in Midwifery, with hospital clinical training, hostel facility and career guidance. Enter to Learn, Leave to Serve.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,11 +37,12 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "EducationalOrganization",
-          name: "Nightingale Nursing & Midwifery Institute",
+          name: INSTITUTE.name,
           description: DESC,
-          telephone: "+8801727127356",
-          email: "nightingalennmi2020@gmail.com",
+          telephone: INSTITUTE.phoneTel,
+          email: INSTITUTE.email,
           url: "https://www.nightingalennmi.com",
+          sameAs: [INSTITUTE.facebook],
           address: {
             "@type": "PostalAddress",
             streetAddress: "Adabor, Mohammadpur",
@@ -64,10 +65,9 @@ function Index() {
         <TrustBar />
         <About />
         <Courses />
-        <JapaneseSection />
-        <CaregivingSection />
-        <NursingSection />
-        <CareerPathway />
+        <Facilities />
+        <FacultyManagement />
+        <CareerOpportunities />
         <WhyChooseUs />
         <Gallery />
         <Admission />

@@ -10,8 +10,7 @@ export function AnnouncementBar() {
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-1 px-4 py-2 text-center text-[11px] font-medium sm:flex-row sm:justify-between sm:text-xs">
         <p>ভর্তি চলছে — Admission Open</p>
         <p className="opacity-90">
-          Japan Career Pathway <span className="mx-1">•</span> Bangladesh
-          Training
+          BNMC Approved <span className="mx-1">•</span> Hospital Clinical Training
         </p>
       </div>
     </div>
@@ -53,7 +52,7 @@ export function Navbar() {
                 নাইটিঙ্গেল নার্সিং এন্ড মিডওয়াইফারি
               </span>
               <span className="block truncate text-[11px] tracking-wide text-muted-foreground uppercase">
-                Nursing • Caregiving • Japanese
+                Nursing • Midwifery • BNMC Approved
               </span>
             </span>
           </a>
@@ -66,9 +65,7 @@ export function Navbar() {
                   className="block rounded-lg px-3 py-2 text-center text-[13px] leading-tight font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                 >
                   {link.bn}
-                  <span className="block text-[10px] text-muted-foreground">
-                    {link.en}
-                  </span>
+                  <span className="block text-[10px] text-muted-foreground">{link.en}</span>
                 </a>
               </li>
             ))}
@@ -112,9 +109,7 @@ export function Navbar() {
                     className="flex items-baseline justify-between rounded-lg px-2 py-3 text-sm font-medium hover:bg-muted"
                   >
                     {link.bn}
-                    <span className="text-xs text-muted-foreground">
-                      {link.en}
-                    </span>
+                    <span className="text-xs text-muted-foreground">{link.en}</span>
                   </a>
                 </li>
               ))}
