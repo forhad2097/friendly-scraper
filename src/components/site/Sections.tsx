@@ -158,7 +158,7 @@ export function Courses() {
               <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold">
                 <span className="rounded-full bg-muted px-3 py-1">মেয়াদ: {course.duration}</span>
                 <span className="rounded-full bg-leaf/50 px-3 py-1 text-leaf-foreground">
-                  আসন: {course.seats}
+                  আসন সংখ্যা: {course.seats}
                 </span>
               </div>
 
