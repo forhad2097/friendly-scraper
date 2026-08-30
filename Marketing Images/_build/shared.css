@@ -1,0 +1,52 @@
+/* NNMI brand tokens — copied verbatim from src/styles.css so posters match the site exactly */
+:root {
+  --radius: 0.9rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.02 150);
+  --card: oklch(1 0 0);
+  --primary: oklch(0.53 0.21 27.5);
+  --primary-foreground: oklch(0.99 0.005 90);
+  --secondary: oklch(0.96 0.03 145);
+  --secondary-foreground: oklch(0.32 0.08 150);
+  --muted: oklch(0.97 0.012 150);
+  --muted-foreground: oklch(0.48 0.02 150);
+  --accent: oklch(0.93 0.06 145);
+  --accent-foreground: oklch(0.3 0.08 150);
+  --border: oklch(0.92 0.015 150);
+  --leaf: oklch(0.86 0.09 140);
+  --leaf-foreground: oklch(0.3 0.08 150);
+  --forest: oklch(0.32 0.07 152);
+  --forest-foreground: oklch(0.97 0.02 145);
+  --cream: oklch(0.985 0.012 105);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 1080px;
+  height: 1080px;
+  overflow: hidden;
+  font-family: "Noto Sans Bengali", "Poppins", sans-serif;
+  color: var(--foreground);
+  background: var(--cream);
+}
+.display { font-family: "Poppins", "Noto Sans Bengali", sans-serif; }
+
+.brand-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand-footer .contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.logo-badge {
+  border-radius: 999px;
+  object-fit: cover;
+  background: white;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}

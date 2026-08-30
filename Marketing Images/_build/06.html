@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--cream); position:relative; }
+  .top { padding: 58px 60px 0; text-align:center; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:20px; letter-spacing:0.24em; text-transform:uppercase; color: var(--primary); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:56px; margin-top:12px; }
+
+  .cards { display:flex; gap: 26px; padding: 46px 56px 0; }
+  .card { flex:1; background: var(--card); border-radius: 28px; padding: 34px 32px; box-shadow: 0 14px 34px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+  .card .icon { width:76px; height:76px; border-radius:20px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:38px; }
+  .card h2 { font-family:"Poppins",sans-serif; font-weight:800; font-size:29px; margin-top:22px; line-height:1.25; color: var(--forest); }
+  .card .bn { font-size:20px; font-weight:600; color: var(--muted-foreground); margin-top:6px; }
+  .badges { display:flex; gap:10px; margin-top: 20px; flex-wrap:wrap; }
+  .badges span { background: var(--muted); font-family:"Poppins",sans-serif; font-weight:700; font-size:16px; padding:8px 16px; border-radius:999px; }
+  .feat { margin-top: 22px; display:flex; flex-direction:column; gap:12px; }
+  .feat div { display:flex; gap:10px; align-items:flex-start; font-size:19px; font-weight:600; line-height:1.35; }
+  .feat .d { width:8px; height:8px; border-radius:50%; background: var(--primary); margin-top:8px; flex-shrink:0; }
+
+  .footer { position:absolute; bottom:0; left:0; right:0; background: var(--forest); color:var(--forest-foreground); padding: 26px 56px; display:flex; align-items:center; justify-content:space-between; }
+  .logo-badge { width: 60px; height:60px; }
+  .footer .contact { font-family:"Poppins",sans-serif; font-weight:800; font-size:24px; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="eyebrow">Courses &amp; Training Programs</div>
+    <h1>আপনার জন্য সঠিক কোর্স</h1>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🩺</div>
+      <h2>Diploma in Nursing Science &amp; Midwifery</h2>
+      <p class="bn">ডিপ্লোমা ইন নার্সিং সায়েন্স অ্যান্ড মিডওয়াইফারি</p>
+      <div class="badges"><span>মেয়াদ: ৩ বছর</span><span>আসন: ৪৫/বছর</span><span>BNMC Approved</span></div>
+      <div class="feat">
+        <div><span class="d"></span>Medical, Surgical &amp; Community Nursing</div>
+        <div><span class="d"></span>হাসপাতাল-ভিত্তিক ক্লিনিক্যাল ট্রেনিং</div>
+        <div><span class="d"></span>Nursing Management &amp; Research</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon">👩‍⚕️</div>
+      <h2>Diploma in Midwifery</h2>
+      <p class="bn">ডিপ্লোমা ইন মিডওয়াইফারি</p>
+      <div class="badges"><span>মেয়াদ: ৩ বছর</span><span>৬ মাস ইন্টার্নশিপ</span><span>আসন: ৪০/বছর</span></div>
+      <div class="feat">
+        <div><span class="d"></span>Antenatal, Intranatal &amp; Postnatal Care</div>
+        <div><span class="d"></span>Neonatal Care &amp; Obstetric Emergencies</div>
+        <div><span class="d"></span>Community Midwifery Practice</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div style="display:flex; align-items:center; gap:14px;"><img class="logo-badge" src="../_source/logo.png"/><span class="contact">NNMI</span></div>
+    <span class="contact">01715-038551</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--cream); position:relative; }
+  .top { padding: 58px 60px 0; text-align:center; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:20px; letter-spacing:0.24em; text-transform:uppercase; color: var(--primary); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:54px; margin-top:12px; }
+  .top .sub { margin-top:16px; font-size:21px; color:var(--muted-foreground); font-weight:500; max-width:640px; margin-left:auto; margin-right:auto; line-height:1.5; }
+
+  .flow-wrap { height: 830px; display:flex; flex-direction:column; justify-content:center; }
+  .flow { position:relative; padding: 0 70px; }
+  .track { position:absolute; top:85px; left:110px; right:110px; height:5px; background: repeating-linear-gradient(90deg, var(--primary) 0 18px, transparent 18px 32px); }
+  .items { display:flex; justify-content:space-between; }
+  .item { width: 220px; text-align:center; }
+  .icon { width: 170px; height:170px; border-radius:50%; background: var(--card); border: 5px solid var(--primary); display:flex; align-items:center; justify-content:center; font-size:72px; margin: 0 auto; box-shadow: 0 16px 32px rgba(0,0,0,0.1); }
+  .item h3 { font-family:"Poppins",sans-serif; font-weight:800; font-size: 25px; margin-top: 28px; color: var(--forest); line-height:1.3; }
+  .item p { font-size: 18px; color: var(--muted-foreground); font-weight:500; margin-top:8px; line-height:1.4; }
+
+  .footer { position:absolute; bottom:0; left:0; right:0; background: var(--forest); color: var(--forest-foreground); padding: 26px 60px; display:flex; align-items:center; justify-content:space-between; font-family:"Poppins",sans-serif; font-weight:800; font-size:23px; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="eyebrow">Career Support</div>
+    <h1>গ্র্যাজুয়েশন থেকে চাকরি পর্যন্ত</h1>
+    <p class="sub">গ্র্যাজুয়েশনের পর প্রতিটি ধাপে NNMI-এর ক্যারিয়ার সহায়তা টিম শিক্ষার্থীদের পাশে থাকে।</p>
+  </div>
+
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="track"></div>
+      <div class="items">
+        <div class="item"><div class="icon">🎓</div><h3>গ্র্যাজুয়েশন</h3><p>কোর্স সম্পন্ন</p></div>
+        <div class="item"><div class="icon">🎯</div><h3>ক্যারিয়ার কাউন্সেলিং</h3><p>দিকনির্দেশনা</p></div>
+        <div class="item"><div class="icon">📝</div><h3>সিভি ও ইন্টারভিউ</h3><p>প্রস্তুতি সহায়তা</p></div>
+        <div class="item"><div class="icon">💼</div><h3>চাকরির সুযোগ</h3><p>প্লেসমেন্ট সহায়তা</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>NNMI — Career Support</span><span>01715-038551</span></div>
+</body>
+</html>

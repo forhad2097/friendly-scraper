@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { position: relative; }
+  .cg-photo {
+    position: absolute; inset: 0;
+    width: 1080px; height: 1080px;
+    object-fit: cover; object-position: 55% 40%;
+  }
+  .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, oklch(0.32 0.07 152/0.96) 0%, oklch(0.32 0.07 152/0.55) 32%, oklch(0.32 0.07 152/0.05) 60%);
+  }
+  .logo-badge { position:absolute; top:44px; left:44px; width:78px; height:78px; }
+  .tag { position:absolute; top:52px; right:44px; background: var(--leaf); color: var(--leaf-foreground); font-family:"Poppins",sans-serif; font-weight:800; font-size:19px; padding:12px 24px; border-radius:999px; }
+
+  .content { position:absolute; left:0; right:0; bottom:0; padding: 0 56px 56px; color: var(--forest-foreground); }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:20px; letter-spacing:0.2em; text-transform:uppercase; color: var(--leaf); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size: 64px; line-height:1.1; margin-top:14px; max-width: 820px; }
+  .sub { margin-top:18px; font-size:24px; font-weight:500; max-width:760px; line-height:1.5; opacity:0.95; }
+  .cta-row { margin-top: 30px; display:flex; align-items:center; justify-content:space-between; border-top: 1.5px solid oklch(0.97 0.02 145/0.25); padding-top:24px; font-family:"Poppins",sans-serif; font-weight:800; font-size:26px; }
+</style>
+</head>
+<body>
+  <img class="cg-photo" src="../_source/caregiving-training.jpg" />
+  <div class="scrim"></div>
+  <img class="logo-badge" src="../_source/logo.png" />
+  <div class="tag">Caregiver Training</div>
+  <div class="content">
+    <div class="eyebrow">Hands-on Practical Training</div>
+    <h1>মমতার হাতে-কলমে প্রশিক্ষণ</h1>
+    <p class="sub">প্রশিক্ষকের সরাসরি তত্ত্বাবধানে বাস্তব হাসপাতাল পরিবেশে প্রবীণ ও রোগীর পরিচর্যায় দক্ষতা অর্জনের সুযোগ।</p>
+    <div class="cta-row"><span>NNMI</span><span>01715-038551</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--background); display:flex; flex-direction:column; align-items:center; text-align:center; padding-top: 90px; position:relative; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:22px; letter-spacing:0.3em; text-transform:uppercase; color: var(--primary); }
+
+  .seal {
+    margin-top: 46px; width: 220px; height: 220px; border-radius: 50%;
+    background: var(--forest); position: relative;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 20px 50px oklch(0.32 0.07 152 / 0.35);
+  }
+  .seal::before {
+    content:""; position:absolute; inset: -14px; border-radius: 50%;
+    border: 3px dashed var(--leaf);
+  }
+  .seal .check { font-size: 108px; color: var(--forest-foreground); }
+
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size: 68px; line-height:1.1; margin-top: 46px; max-width: 880px; }
+
+  .rows { margin-top: 54px; display:flex; flex-direction:column; gap: 22px; width: 860px; }
+  .row {
+    display:flex; align-items:center; gap:18px; text-align:left;
+    background: var(--muted); border-radius: 18px; padding: 24px 30px;
+  }
+  .row .ok { width:44px; height:44px; border-radius:50%; background:var(--primary); color:var(--primary-foreground); display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:900; flex-shrink:0; }
+  .row p { font-size: 26px; font-weight: 700; line-height: 1.3; }
+  .row span { display:block; font-size:18px; font-weight:500; color:var(--muted-foreground); margin-top:3px; }
+
+  .footer { position:absolute; bottom:0; left:0; right:0; padding: 34px 64px; display:flex; align-items:center; justify-content:space-between; border-top: 2px solid var(--border); }
+  .logo-badge { width: 64px; height: 64px; }
+  .footer .contact { font-family:"Poppins",sans-serif; font-weight:700; font-size:23px; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Government Approved</div>
+  <div class="seal"><span class="check">✓</span></div>
+  <h1>সরকার অনুমোদিত প্রতিষ্ঠান</h1>
+
+  <div class="rows">
+    <div class="row"><span class="ok">✓</span><p>Bangladesh Nursing &amp; Midwifery Council (BNMC)<span>কোর্স স্বীকৃতিপ্রাপ্ত</span></p></div>
+    <div class="row"><span class="ok">✓</span><p>Ministry of Health &amp; Family Welfare<span>স্বাস্থ্য মন্ত্রণালয় কর্তৃক অনুমোদিত</span></p></div>
+    <div class="row"><span class="ok">✓</span><p>IACIB — Associate Institution<span>Institute of Allergy &amp; Clinical Immunology, Bangladesh</span></p></div>
+  </div>
+
+  <div class="footer">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <img class="logo-badge" src="../_source/logo.png" />
+      <span class="contact">NNMI</span>
+    </div>
+    <span class="contact">01715-038551 &nbsp;·&nbsp; www.nightingalennmi.com</span>
+  </div>
+</body>
+</html>

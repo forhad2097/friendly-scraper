@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { position: relative; }
+  .photo {
+    position: absolute; inset: 0;
+    width: 1080px; height: 1080px;
+    object-fit: cover; object-position: 50% 30%;
+  }
+  .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, oklch(0.22 0.02 150 / 0.05) 0%, oklch(0.22 0.02 150 / 0.15) 38%, oklch(0.22 0.02 150 / 0.94) 78%, oklch(0.22 0.02 150 / 0.98) 100%);
+  }
+  .top-bar {
+    position: absolute; top: 48px; left: 48px; right: 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo-badge { width: 84px; height: 84px; }
+  .open-pill {
+    background: var(--primary); color: var(--primary-foreground);
+    font-family: "Poppins", sans-serif; font-weight: 800; font-size: 20px;
+    letter-spacing: 0.02em; padding: 12px 26px; border-radius: 999px;
+    box-shadow: 0 8px 20px oklch(0.53 0.21 27.5 / 0.45);
+  }
+  .content {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 0 56px 52px;
+    color: var(--forest-foreground);
+  }
+  .eyebrow {
+    font-family: "Poppins", sans-serif; font-weight: 700; font-size: 22px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--leaf);
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: "Poppins", "Noto Sans Bengali", sans-serif;
+    font-weight: 900; font-size: 92px; line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    margin-top: 22px; font-size: 30px; font-weight: 500; line-height: 1.5;
+    max-width: 880px; opacity: 0.95;
+  }
+  .chips { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+  .chip {
+    font-family: "Poppins", sans-serif; font-weight: 700; font-size: 21px;
+    background: oklch(0.97 0.02 145 / 0.14); border: 1.5px solid oklch(0.97 0.02 145 / 0.4);
+    padding: 12px 22px; border-radius: 999px;
+  }
+  .cta-row {
+    margin-top: 40px; display: flex; align-items: center; justify-content: space-between;
+    border-top: 1.5px solid oklch(0.97 0.02 145 / 0.25); padding-top: 30px;
+  }
+  .cta-row .contact { font-family: "Poppins", sans-serif; font-size: 30px; font-weight: 800; }
+  .cta-row .website { font-family: "Poppins", sans-serif; font-size: 24px; font-weight: 600; opacity: 0.9; }
+</style>
+</head>
+<body>
+  <img class="photo" src="../_source/image.png" />
+  <div class="scrim"></div>
+  <div class="top-bar">
+    <img class="logo-badge" src="../_source/logo.png" />
+    <div class="open-pill">ADMISSION OPEN</div>
+  </div>
+  <div class="content">
+    <div class="eyebrow">BNMC Approved Diploma Programs</div>
+    <h1>ভর্তি চলছে</h1>
+    <p class="sub">Diploma in Nursing Science &amp; Midwifery ও Diploma in Midwifery প্রোগ্রামে ভর্তি চলছে — হাসপাতাল-ভিত্তিক ক্লিনিক্যাল ট্রেনিং ও হোস্টেল সুবিধাসহ।</p>
+    <div class="chips">
+      <span class="chip">৩ বছর মেয়াদি</span>
+      <span class="chip">হোস্টেল সুবিধা</span>
+      <span class="chip">Career Guidance</span>
+    </div>
+    <div class="cta-row">
+      <span class="contact"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="vertical-align:-5px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 01715-038551</span>
+      <span class="website">www.nightingalennmi.com</span>
+    </div>
+  </div>
+</body>
+</html>

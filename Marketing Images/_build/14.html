@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { display:flex; background: var(--background); }
+  .imgcol { width: 420px; height:1080px; flex-shrink:0; overflow:hidden; }
+  .imgcol .career-photo { width:100%; height:100%; object-fit:cover; object-position: 25% 25%; }
+
+  .txtcol { flex:1; padding: 60px 54px; display:flex; flex-direction:column; justify-content:space-between; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:19px; letter-spacing:0.22em; text-transform:uppercase; color: var(--primary); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:50px; line-height:1.15; margin-top:14px; }
+  .logo-badge { width: 60px; height:60px; }
+
+  .list { display:flex; flex-direction:column; gap: 26px; margin-top: 20px; }
+  .list .row { display:flex; align-items:flex-start; gap:16px; }
+  .row .dot { width:11px; height:11px; border-radius:50%; background: var(--primary); flex-shrink:0; margin-top:9px; }
+  .row .rt b { display:block; font-size:24px; font-weight:700; }
+  .row .rt span { display:block; font-size:17px; color: var(--muted-foreground); font-weight:500; margin-top:3px; }
+
+  .footer { display:flex; align-items:center; justify-content:space-between; border-top: 2px solid var(--border); padding-top: 22px; }
+  .footer .contact { font-family:"Poppins",sans-serif; font-weight:800; font-size:24px; color: var(--forest); }
+</style>
+</head>
+<body>
+  <div class="imgcol"><img class="career-photo" src="../_source/hero-caregiver.jpg" /></div>
+  <div class="txtcol">
+    <div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div class="eyebrow">Career Opportunities</div>
+        <img class="logo-badge" src="../_source/logo.png" />
+      </div>
+      <h1>প্রশিক্ষণ শেষে দেশজুড়ে কাজের সুযোগ</h1>
+      <div class="list">
+        <div class="row"><span class="dot"></span><span class="rt"><b>সরকারি হাসপাতাল</b><span>উপজেলা স্বাস্থ্য কমপ্লেক্স, জেলা হাসপাতাল, মেডিকেল কলেজ</span></span></div>
+        <div class="row"><span class="dot"></span><span class="rt"><b>প্রাইভেট ক্লিনিক ও হাসপাতাল</b><span>শহর ও শহরতলির বেসরকারি স্বাস্থ্যসেবা কেন্দ্র</span></span></div>
+        <div class="row"><span class="dot"></span><span class="rt"><b>কমিউনিটি হেলথ সেন্টার</b><span>স্থানীয় জনস্বাস্থ্য সেবা কার্যক্রম</span></span></div>
+        <div class="row"><span class="dot"></span><span class="rt"><b>এনজিও ও স্বাস্থ্য প্রকল্প</b><span>উন্নয়ন সংস্থার স্বাস্থ্যসেবা কার্যক্রম</span></span></div>
+        <div class="row"><span class="dot"></span><span class="rt"><b>ডায়াগনস্টিক ও ইমার্জেন্সি</b><span>পরীক্ষা কেন্দ্র ও জরুরি সেবা বিভাগ</span></span></div>
+      </div>
+    </div>
+    <div class="footer"><span class="contact">NNMI</span><span class="contact">01715-038551</span></div>
+  </div>
+</body>
+</html>

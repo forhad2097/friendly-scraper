@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--forest); }
+  .collage { display:flex; gap: 6px; height: 800px; padding: 6px; }
+  .big { flex: 1.4; overflow:hidden; border-radius: 4px; position:relative; }
+  .stack { flex: 1; display:flex; flex-direction:column; gap:6px; }
+  .stack .cell { flex:1; overflow:hidden; border-radius:4px; }
+  img.fill { width:100%; height:100%; object-fit:cover; }
+  .big img { object-position: 40% 30%; }
+  .stack .c1 img { object-position: 50% 20%; }
+  .stack .c2 img { object-position: 20% 30%; }
+
+  .badge-overlay {
+    position:absolute; top:22px; left:22px; background: var(--primary); color:var(--primary-foreground);
+    font-family:"Poppins",sans-serif; font-weight:800; font-size:18px; padding:10px 20px; border-radius:999px;
+  }
+
+  .band { height: 280px; color: var(--forest-foreground); padding: 34px 56px; display:flex; flex-direction:column; justify-content:center; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:19px; letter-spacing:0.2em; text-transform:uppercase; color: var(--leaf); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:48px; margin-top: 10px; }
+  .row { display:flex; align-items:center; justify-content:space-between; margin-top: 20px; }
+  .row p { font-size: 22px; font-weight:500; max-width: 620px; line-height:1.4; opacity:0.9; }
+  .logo-badge { width: 74px; height: 74px; }
+</style>
+</head>
+<body>
+  <div class="collage">
+    <div class="big"><img class="fill" src="../_source/caregiving-training.jpg" /><span class="badge-overlay">Practical Training</span></div>
+    <div class="stack">
+      <div class="cell c1"><img class="fill" src="../_source/japanese-class.jpg" /></div>
+      <div class="cell c2"><img class="fill" src="../_source/hero-caregiver.jpg" /></div>
+    </div>
+  </div>
+  <div class="band">
+    <div class="eyebrow">Caregiver Training</div>
+    <h1>হাতে-কলমে কেয়ারগিভিং প্রশিক্ষণ</h1>
+    <div class="row">
+      <p>প্রশিক্ষকের সরাসরি তত্ত্বাবধানে বাস্তব পরিবেশে প্রবীণ ও রোগীর পরিচর্যায় দক্ষতা অর্জনের সুযোগ।</p>
+      <img class="logo-badge" src="../_source/logo.png" />
+    </div>
+  </div>
+</body>
+</html>

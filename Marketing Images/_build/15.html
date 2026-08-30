@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--cream); position:relative; }
+  .top { padding: 54px 60px 0; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:20px; letter-spacing:0.22em; text-transform:uppercase; color: var(--primary); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:50px; margin-top:12px; max-width: 820px; }
+
+  .wrap-outer { height: 780px; display:flex; align-items:center; }
+  .wrap { display:flex; gap: 28px; padding: 0 60px; width: 100%; }
+  .fees { width: 360px; display:flex; flex-direction:column; gap: 26px; flex-shrink:0; }
+  .fee-card { background: var(--forest); color: var(--forest-foreground); border-radius: 24px; padding: 38px 34px; }
+  .fee-card .lbl { font-family:"Poppins",sans-serif; font-weight:700; font-size:18px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.75; }
+  .fee-card .amt { font-family:"Noto Sans Bengali","Poppins",sans-serif; font-weight:900; font-size:54px; margin-top:12px; }
+  .fee-card.alt { background: var(--primary); }
+
+  .checklist { flex:1; background: var(--card); border: 2px solid var(--border); border-radius: 24px; padding: 40px; }
+  .checklist h3 { font-family:"Poppins",sans-serif; font-weight:800; font-size: 26px; margin-bottom: 26px; color: var(--forest); }
+  .cl-grid { display:grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
+  .cl-item { display:flex; align-items:center; gap:12px; font-size: 23px; font-weight:600; }
+  .cl-item .ck { width:30px; height:30px; border-radius:50%; background: var(--accent); color: var(--accent-foreground); display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:900; flex-shrink:0; }
+
+  .footer { position:absolute; bottom:0; left:0; right:0; background: var(--forest); color: var(--forest-foreground); padding: 24px 60px; display:flex; align-items:center; justify-content:space-between; font-family:"Poppins",sans-serif; font-weight:800; font-size:23px; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="eyebrow">Admission Fee</div>
+    <h1>ভর্তি ফি-তে যা যা অন্তর্ভুক্ত থাকছে</h1>
+  </div>
+
+  <div class="wrap-outer">
+  <div class="wrap">
+    <div class="fees">
+      <div class="fee-card"><div class="lbl">Admission Fee (এককালীন)</div><div class="amt">৳৫০,০০০</div></div>
+      <div class="fee-card alt"><div class="lbl">Hostel Fee (মাসিক)</div><div class="amt">৳২,৫০০</div></div>
+    </div>
+    <div class="checklist">
+      <h3>ফি-তে অন্তর্ভুক্ত</h3>
+      <div class="cl-grid">
+        <div class="cl-item"><span class="ck">✓</span>টিউশন</div>
+        <div class="cl-item"><span class="ck">✓</span>হোস্টেল</div>
+        <div class="cl-item"><span class="ck">✓</span>খাবার</div>
+        <div class="cl-item"><span class="ck">✓</span>ল্যাব প্র্যাকটিস</div>
+        <div class="cl-item"><span class="ck">✓</span>ক্লিনিক্যাল ট্রেনিং</div>
+        <div class="cl-item"><span class="ck">✓</span>ইউনিফর্ম</div>
+        <div class="cl-item"><span class="ck">✓</span>বই</div>
+        <div class="cl-item"><span class="ck">✓</span>পরীক্ষার ফি</div>
+      </div>
+      <p style="margin-top:28px; font-size:18px; color:var(--muted-foreground); font-weight:500; line-height:1.5;">মাসিক বা ত্রৈমাসিক কিস্তিতে পরিশোধের সুযোগ রয়েছে — উভয় প্রোগ্রামের জন্য প্রযোজ্য।</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="footer"><span>NNMI — Nightingale Nursing &amp; Midwifery Institute</span><span>01715-038551</span></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--background); position: relative; padding: 58px 60px 0; }
+  .top { display:flex; align-items:center; justify-content:space-between; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:20px; letter-spacing:0.22em; text-transform:uppercase; color: var(--primary); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:52px; margin-top:10px; }
+  .logo-badge { width: 76px; height: 76px; }
+
+  .steps-wrap { height: 760px; display:flex; flex-direction:column; justify-content:center; }
+  .steps { position: relative; }
+  .rail { position: absolute; left: 39px; top: 10px; bottom: 10px; width: 4px; background: var(--border); }
+  .step { position: relative; display:flex; gap: 26px; padding: 22px 0; align-items:flex-start; }
+  .num { width: 80px; height: 80px; border-radius: 50%; background: var(--forest); color: var(--forest-foreground);
+    display:flex; align-items:center; justify-content:center; font-family:"Poppins",sans-serif; font-weight:900; font-size:32px; flex-shrink:0; z-index:1; }
+  .txt h3 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:800; font-size: 29px; padding-top: 14px; }
+  .txt p { font-size: 21px; color: var(--muted-foreground); font-weight:500; margin-top:6px; max-width: 720px; }
+
+  .footer { position:absolute; bottom:0; left:0; right:0; background: var(--primary); color: var(--primary-foreground); padding: 26px 60px; display:flex; align-items:center; justify-content:space-between; font-family:"Poppins",sans-serif; font-weight:800; font-size:24px; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div>
+      <div class="eyebrow">How To Apply</div>
+      <h1>মাত্র ৪ ধাপে ভর্তি</h1>
+    </div>
+    <img class="logo-badge" src="../_source/logo.png" />
+  </div>
+
+  <div class="steps-wrap">
+  <div class="steps">
+    <div class="rail"></div>
+    <div class="step"><div class="num">১</div><div class="txt"><h3>যোগ্যতা যাচাই</h3><p>SSC ও HSC (বা সমমান) উভয় পরীক্ষায় উত্তীর্ণ — বিজ্ঞান বিভাগ অগ্রাধিকারযোগ্য।</p></div></div>
+    <div class="step"><div class="num">২</div><div class="txt"><h3>ডকুমেন্ট জমা</h3><p>সার্টিফিকেট ও মার্কশিট, ৪ কপি ছবি, NID/জন্ম নিবন্ধনের ফটোকপি।</p></div></div>
+    <div class="step"><div class="num">৩</div><div class="txt"><h3>ভর্তি ফি পরিশোধ</h3><p>৳৫০,০০০ এককালীন — মাসিক বা ত্রৈমাসিক কিস্তির সুবিধাসহ।</p></div></div>
+    <div class="step"><div class="num">৪</div><div class="txt"><h3>ক্লাস শুরু</h3><p>হাসপাতাল-ভিত্তিক প্র্যাকটিক্যাল ট্রেনিং সহ ক্লাস শুরু।</p></div></div>
+  </div>
+  </div>
+
+  <div class="footer"><span>Diploma in Nursing Science &amp; Midwifery · Diploma in Midwifery</span><span>01715-038551</span></div>
+</body>
+</html>

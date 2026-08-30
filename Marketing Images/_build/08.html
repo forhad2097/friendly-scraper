@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--forest); position: relative; }
+  .photo { width:1080px; height: 620px; overflow:hidden; position:relative; }
+  .photo-img { width:100%; height:100%; object-fit:cover; object-position: 68% 30%; }
+  .logo-badge { position:absolute; top:36px; left:40px; width:76px; height:76px; }
+  .tag { position:absolute; top:46px; right:40px; background: var(--primary); color:var(--primary-foreground); font-family:"Poppins",sans-serif; font-weight:800; font-size:19px; padding:12px 22px; border-radius:999px; }
+
+  .card {
+    position: relative; margin-top: -70px; background: var(--card);
+    border-radius: 46px 46px 0 0; padding: 52px 56px 40px;
+    display:flex; flex-direction:column; gap: 26px;
+  }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:19px; letter-spacing:0.2em; text-transform:uppercase; color: var(--primary); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:46px; line-height:1.15; margin-top:8px; }
+
+  .support { display:grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 6px; }
+  .s-item { display:flex; gap:12px; align-items:flex-start; background: var(--muted); border-radius:16px; padding:16px 18px; }
+  .s-item .ic { font-size:26px; }
+  .s-item p { font-size: 19px; font-weight:700; line-height:1.3; }
+
+  .footer { display:flex; align-items:center; justify-content:space-between; margin-top: 8px; padding-top: 22px; border-top: 2px solid var(--border); }
+  .footer .contact { font-family:"Poppins",sans-serif; font-weight:800; font-size:24px; color: var(--forest); }
+</style>
+</head>
+<body>
+  <div class="photo">
+    <img class="photo-img" src="../_source/hero-caregiver.jpg" />
+    <img class="logo-badge" src="../_source/logo.png" />
+    <div class="tag">Career Support</div>
+  </div>
+  <div class="card">
+    <div>
+      <div class="eyebrow">Job Placement</div>
+      <h1>দেশে-বিদেশে চাকরির জন্য পূর্ণাঙ্গ সহায়তা</h1>
+    </div>
+    <div class="support">
+      <div class="s-item"><span class="ic">🎯</span><p>ক্যারিয়ার কাউন্সেলিং</p></div>
+      <div class="s-item"><span class="ic">📝</span><p>সিভি ও ইন্টারভিউ প্রস্তুতি</p></div>
+      <div class="s-item"><span class="ic">🌍</span><p>বিদেশে আবেদনে সহায়তা</p></div>
+      <div class="s-item"><span class="ic">🤝</span><p>অ্যালামনাই নেটওয়ার্কিং</p></div>
+    </div>
+    <div class="footer">
+      <span class="contact">NNMI</span>
+      <span class="contact">01715-038551</span>
+    </div>
+  </div>
+</body>
+</html>

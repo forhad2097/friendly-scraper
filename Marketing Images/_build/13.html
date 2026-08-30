@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  body { background: var(--cream); position:relative; }
+  .top { padding: 54px 60px 0; text-align:center; }
+  .eyebrow { font-family:"Poppins",sans-serif; font-weight:700; font-size:20px; letter-spacing:0.24em; text-transform:uppercase; color: var(--primary); }
+  h1 { font-family:"Poppins","Noto Sans Bengali",sans-serif; font-weight:900; font-size:56px; margin-top:12px; }
+
+  .cols { display:flex; gap: 4px; margin-top: 46px; padding: 0 4px; height: 660px; }
+  .col { flex:1; padding: 30px 26px; display:flex; flex-direction:column; gap: 20px; justify-content:center; }
+  .col.gov { background: var(--forest); color: var(--forest-foreground); }
+  .col.pvt { background: var(--primary); color: var(--primary-foreground); }
+  .col.ngo { background: oklch(0.3 0.08 150); color: var(--forest-foreground); }
+  .col h2 { font-family:"Poppins",sans-serif; font-weight:800; font-size: 25px; padding-bottom:14px; border-bottom: 2px solid oklch(1 0 0/0.25); }
+  .col .item { font-size: 19px; font-weight:600; line-height:1.4; padding: 4px 0; }
+
+  .footer { position:absolute; bottom:0; left:0; right:0; padding: 24px 60px; display:flex; align-items:center; justify-content:space-between; border-top:2px solid var(--border); }
+  .logo-badge { width: 56px; height:56px; }
+  .footer .contact { font-family:"Poppins",sans-serif; font-weight:700; font-size:22px; color: var(--forest); }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="eyebrow">Career Opportunities</div>
+    <h1>দেশজুড়ে কর্মক্ষেত্র</h1>
+  </div>
+
+  <div class="cols">
+    <div class="col gov">
+      <h2>সরকারি</h2>
+      <div class="item">উপজেলা স্বাস্থ্য কমপ্লেক্স</div>
+      <div class="item">জেলা হাসপাতাল</div>
+      <div class="item">সরকারি মেডিকেল কলেজ হাসপাতাল</div>
+    </div>
+    <div class="col pvt">
+      <h2>বেসরকারি</h2>
+      <div class="item">প্রাইভেট ক্লিনিক ও হাসপাতাল</div>
+      <div class="item">ডায়াগনস্টিক সেন্টার</div>
+      <div class="item">ইমার্জেন্সি কেয়ার ইউনিট</div>
+    </div>
+    <div class="col ngo">
+      <h2>কমিউনিটি ও শিক্ষা</h2>
+      <div class="item">কমিউনিটি হেলথ সেন্টার</div>
+      <div class="item">এনজিও স্বাস্থ্য প্রকল্প</div>
+      <div class="item">শিক্ষা প্রতিষ্ঠান (প্রশিক্ষক)</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div style="display:flex; align-items:center; gap:12px;"><img class="logo-badge" src="../_source/logo.png"/><span class="contact">NNMI</span></div>
+    <span class="contact">01715-038551</span>
+  </div>
+</body>
+</html>
